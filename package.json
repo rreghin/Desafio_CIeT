@@ -1,0 +1,19 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "Desafio CI&T",
+  "main": "desafio.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rreghin/Desafio_CIeT.git"
+  },
+  "author": "Roger Reghin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rreghin/Desafio_CIeT/issues"
+  },
+  "homepage": "https://github.com/rreghin/Desafio_CIeT#readme"
+}
