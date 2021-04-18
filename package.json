@@ -4,7 +4,7 @@
   "description": "Desafio CI&T",
   "main": "challenge.js",
   "scripts": {
-    "challenge": "tsc && node ./dist/challenge.js",
+    "challenge": "tsc && node ./dist/src/challenge.js",
     "test": "tsc && jest ./dist"
   },
   "repository": {

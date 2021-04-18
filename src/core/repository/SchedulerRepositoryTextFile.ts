@@ -35,15 +35,15 @@ export default class SchedulerRepositoryTextFile implements ISchedulerRepository
     private buildJobsArray(array: Array<string>): Array<Job> {
         var tempJobsStr: string = "";
 
-        array.forEach(function(linha: string) {
-            if (linha.indexOf(': ') >= 0) {
-                var partes = linha.split(': ',2);
-                if (linha.indexOf('",') < 0)
-                    linha = partes[0] + ':\'' + (partes[1]||'').split(',')[0].trim() + '\','
+        array.forEach(function(line: string) {
+            if (line.indexOf(': ') >= 0) {
+                var parts = line.split(': ',2);
+                if (line.indexOf('",') < 0)
+                    line = parts[0] + ':\'' + (parts[1]||'').split(',')[0].trim() + '\','
                 else
-                    linha = partes[0] + ':' + (partes[1]||'').trim().replace(/\"/gi,'\'');
+                    line = parts[0] + ':' + (parts[1]||'').trim().replace(/\"/gi,'\'');
             }
-            tempJobsStr += linha;
+            tempJobsStr += line;
         });
      
         tempJobsStr = tempJobsStr.replace(/ID/gi,'id').
@@ -55,15 +55,15 @@ export default class SchedulerRepositoryTextFile implements ISchedulerRepository
         const result: Array<Job> = [];
 
         tempJobs.forEach(function(job: any) {
-            var valor = job.tempoEstimado.split(' ');
-            var numero = Number.parseInt(valor[0]);
-            var referencia = valor[1];
-            if (referencia.search(/HORAS/i) >= 0)
-                job.tempoEstimadoSegundos = (60 * 60) * numero;
-            else if (referencia.search(/MINUTOS/i) >= 0)
-                job.tempoEstimadoSegundos = (60) * numero;
-            else if (referencia.search(/SEGUNDOS/i) >= 0)
-                job.tempoEstimadoSegundos = numero;
+            var whole = job.tempoEstimado.split(' ');
+            var value = Number.parseInt(whole[0]);
+            var unit = whole[1];
+            if (unit.search(/HORAS/i) >= 0)
+                job.tempoEstimadoSegundos = (60 * 60) * value;
+            else if (unit.search(/MINUTOS/i) >= 0)
+                job.tempoEstimadoSegundos = (60) * value;
+            else if (unit.search(/SEGUNDOS/i) >= 0)
+                job.tempoEstimadoSegundos = value;
      
             result.push(new Job(
                 Number.parseInt(job.id),
