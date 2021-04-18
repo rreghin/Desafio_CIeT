@@ -4,7 +4,7 @@
   "description": "Desafio CI&T",
   "main": "desafio.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "desafio": "tsc && node ./dist/desafio.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/rreghin/Desafio_CIeT/issues"
   },
-  "homepage": "https://github.com/rreghin/Desafio_CIeT#readme"
+  "homepage": "https://github.com/rreghin/Desafio_CIeT#readme",
+  "dependencies": {
+    "@types/jest": "^26.0.22",
+    "jest": "^26.6.3"
+  }
 }
