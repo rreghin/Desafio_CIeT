@@ -10,7 +10,7 @@ export default class Job {
         this.id = id;
         this.description = description;
         this.estimatedTimeSeconds = estimatedTimeSeconds;
-        this.maxEndDate = maxEndDate;    
+        this.maxEndDate = new Date(maxEndDate);
         this.maxStartDate = new Date(this.maxEndDate - (this.estimatedTimeSeconds * 1000));
     }
 
