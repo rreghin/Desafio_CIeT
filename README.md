@@ -59,8 +59,16 @@ Output esperado
 
 ## Como usar 
 
-* O único requisito para executar o desafio é ter o Docker instalado. Não foi testado usando o Docker Desktop no Windows.
+Observação: O único requisito para executar o desafio é ter o Docker instalado.
+
+### Usando no Linux/MacOSX
 
 Faça o clone do repositório, entre no diretório do projeto e execute: ```chmod +x ./rundocker.sh ; ./rundocker.sh```
+
+### Usando no Windows (CMD ou PS)
+
+Faça o clone do repositório, entre na pasta do projeto e execute: ```.\rundocker.bat```
+
+### Em qualquer um dos três...
 
 Assim que o prompt do container aparecer, você pode executar: ```npm run test``` e/ou ```npm run challenge```
