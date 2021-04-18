@@ -1,10 +1,10 @@
 export default class Job {
 
-    public id: number;
-    public description: string;
-    public estimatedTimeSeconds: number;
-    public maxStartDate: any;
-    public maxEndDate: any;
+    id: number;
+    description: string;
+    estimatedTimeSeconds: number;
+    maxStartDate: any;
+    maxEndDate: any;
 
     constructor(id: number, description: string, estimatedTimeSeconds: number, maxEndDate: any) {
         this.id = id;

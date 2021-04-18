@@ -8,14 +8,11 @@ Job
     maxStartDate: Date
     maxEndDate: Date
 
-JobGroup
-    jobs: Job[]
-
 Scheduler
     windowFrom: Date
     windowUpTo: Date
     serializeJobs: Boolean
-    jobGroups: JobGroup[]
+    jobGroups: Job[][]
 
 TESTS
 -----------------------
