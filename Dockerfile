@@ -1,5 +1,7 @@
 FROM node:14
-RUN npm install typescript --global
+USER root
+COPY entrypoint.sh /run/entrypoint.sh
+RUN npm install typescript --global ; \
+    chmod +x /run/entrypoint.sh
 WORKDIR /home/app
-#VOLUME /home/app
-ENTRYPOINT ["/bin/bash"]
+CMD [ "/run/entrypoint.sh" ]

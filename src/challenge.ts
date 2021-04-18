@@ -7,7 +7,7 @@ function printResult(array: Array<Array<Number>>) {
 	array.forEach(function(group: Array<Number>) {
 		stringResult += (stringResult?',\n':'') + '    ' + JSON.stringify(group).split(',').join(', ');
 	});
-	process.stdout.write('[\n' + stringResult + '\n]\n');
+	process.stdout.write('[\n' + stringResult + '\n]\n\n');
 }
 
 (function /*main*/() {
