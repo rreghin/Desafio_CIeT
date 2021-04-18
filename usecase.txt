@@ -1,0 +1,24 @@
+ENTITIES
+-----------------------
+
+Job
+    id: Number
+    description: String
+    estimatedTime: Number
+    maxStartDate: Date
+    maxEndDate: Date
+
+JobGroup
+    jobs: Job[]
+
+Scheduler
+    windowFrom: Date
+    windowUpTo: Date
+    serializeJobs: Boolean
+    jobGroups: JobGroup[]
+
+TESTS
+-----------------------
+
+ScheduleJob
+

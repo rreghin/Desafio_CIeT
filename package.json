@@ -2,9 +2,10 @@
   "name": "app",
   "version": "1.0.0",
   "description": "Desafio CI&T",
-  "main": "desafio.js",
+  "main": "challenge.js",
   "scripts": {
-    "desafio": "tsc && node ./dist/desafio.js"
+    "challenge": "tsc && node ./dist/challenge.js",
+    "test": "tsc && jest ./dist"
   },
   "repository": {
     "type": "git",
