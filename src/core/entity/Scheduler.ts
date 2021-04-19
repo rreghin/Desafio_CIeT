@@ -5,7 +5,7 @@ export default class Scheduler {
     windowToDate: Date;
     serializeGroups: boolean;
     jobs: Array<Job>;
-    jobGroups: Array<Array<Number>> = [];
+    jobGroups: Array<Array<Number>> = undefined;
 
     constructor(windowFromDate: Date, windowToDate: Date, serializeGroups?: boolean, jobs?: Array<Job>) {
         this.windowFromDate = new Date(windowFromDate);
@@ -15,6 +15,8 @@ export default class Scheduler {
     }
 
     buildJobGroups(maxGroupTimeSeconds: number) {
+        this.jobGroups = [];
+        
         var tempJobs: Array<Job> = Array.from(this.jobs).sort(function(job1,job2) {
             if (job1.maxStartDate > job2.maxStartDate)
                 return 1;
