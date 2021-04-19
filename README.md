@@ -72,3 +72,10 @@ Faça o clone do repositório, entre na pasta do projeto e execute: ```.\rundock
 ### Em qualquer um dos três...
 
 Assim que o prompt do container aparecer, você pode executar: ```npm run test``` e/ou ```npm run challenge```
+
+### PoC
+
+Foi feito uma PoC usando a IDEOne sandboxing, que está disponível em:
+```
+https://ideone.com/n6GY0n
+```
