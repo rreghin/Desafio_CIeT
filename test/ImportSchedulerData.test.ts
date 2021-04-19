@@ -27,7 +27,18 @@ test("Sould import from TEXT FILE", function() {
     expect(scheduler.serializeGroups).toBe(false);
     expect(scheduler.jobs.toString()).toBe('[object Object],[object Object],[object Object]');
 
+    // roda uma vez pra ver se funciona
     scheduler.buildJobGroups((8/*horas*/ * 60 * 60));
     expect(scheduler.jobGroups.toString()).toBe('1,3,2');
+    expect(scheduler.jobs.map(j => j.id).toString()).toBe('1,2,3');
+
+    // roda uma segunda vez pra ver se obtem o mesmo resultado
+    scheduler.buildJobGroups((8/*horas*/ * 60 * 60));
+    expect(scheduler.jobGroups.toString()).toBe('1,3,2');
+    expect(scheduler.jobs.map(j => j.id).toString()).toBe('1,2,3');
+
+    // roda uma terceira vez pra testar outro maximo por grupo
+    scheduler.buildJobGroups((4/*horas*/ * 60 * 60));
+    expect(scheduler.jobGroups.toString()).toBe('1,2');
     expect(scheduler.jobs.map(j => j.id).toString()).toBe('1,2,3');
 });
