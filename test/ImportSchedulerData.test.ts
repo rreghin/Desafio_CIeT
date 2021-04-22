@@ -42,3 +42,14 @@ test("Sould import from TEXT FILE", function() {
     expect(scheduler.jobGroups.toString()).toBe('1,2');
     expect(scheduler.jobs.map(j => j.id).toString()).toBe('1,2,3');
 });
+
+test("Sould import from TEXT FILE", function() {
+    const schedulerRepository = new SchedulerRepositoryTextFile();
+    const validateScheduler = new ValidateScheduler(schedulerRepository);
+    const scheduler = validateScheduler.execute('/home/app/input-serial.txt');
+
+    expect(scheduler.serializeGroups).toBe(true);
+
+    scheduler.buildJobGroups((8/*horas*/ * 60 * 60));
+    expect(scheduler.jobGroups.toString()).toBe('1');
+});

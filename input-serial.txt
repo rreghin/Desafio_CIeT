@@ -1,0 +1,17 @@
+2019-11-10 00:00:00
+2019-11-10 08:00:00
+true
+[
+    {
+        "ID": 1,
+        "Descrição": "Importação de arquivos de fundos",
+        "Data Máxima de conclusão": 2019-11-10 04:00:00,
+        "Tempo estimado": 4 horas,
+    },
+    {
+        "ID": 2,
+        "Descrição": "Importação de dados da Base Legada",
+        "Data Máxima de conclusão": 2019-11-10 04:00:00,
+        "Tempo estimado": 4 horas,
+    },
+]
